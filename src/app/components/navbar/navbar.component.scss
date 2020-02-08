@@ -1,0 +1,198 @@
+@import '../../../colors';
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    transition: transform 0.1s ease-in;
+    user-select: none;
+    -webkit-user-select: none;
+    > div:nth-of-type(2) {
+        display: flex;
+        flex-direction: row;
+        > a {
+            display: none;
+            cursor: pointer;
+            margin: 15px;
+            margin-right: 20px;
+            -webkit-tap-highlight-color: transparent;
+            > div.menu {
+                position: relative;
+                width: 25px;
+                height: 25px;
+                > i {
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    background-color: $text-neutral-color;
+                    border-radius: 1px;
+                    &:nth-of-type(1) {
+                        top: 4px;
+                        transition: transform 0.1s ease-in;
+                    }
+                    &:nth-of-type(2) {
+                        top: 11px;
+                    }
+                    &:nth-of-type(3) {
+                        top: 18px;
+                        transition: transform 0.1s ease-in;
+                    }
+                }
+            }
+        }
+        ul {
+            padding-left: 25px;
+            padding-right: 25px;
+            li {
+                display: inline-block;
+                position: relative;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+                a {
+                    font-size: 1.25rem;
+                    font-weight: 300;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    color: rgba($text-neutral-color, 1);
+                }
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: -14px;
+                    height: 0;
+                    background: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+                    transform: perspective(100px) rotateX(45deg);
+                }
+                &:hover {
+                    cursor: pointer;
+                    text-shadow: 0px 3px 1px rgba($text-neutral-color, 0.05);
+                    &:before {
+                        height: 40px;
+                        transition: all 0.15s;
+                    }
+                    &:nth-of-type(1):before {
+                        width: 65px;
+                        left: 3px;
+                    }
+                    &:nth-of-type(2):before {
+                        width: 96px;
+                        left: 5px;
+                    }
+                    &:nth-of-type(3):before {
+                        width: 81px;
+                        left: 5px;
+                        
+                    }
+                }
+            }
+        }
+    }
+    &.open {
+        &.hide {
+            transform: unset;
+        }
+        > div:nth-of-type(2) > a > div.menu {
+            > i:nth-of-type(1) {
+                transform: translateY(7px) rotate(45deg);
+                transform-origin: center, center;
+                transition: transform 0.1s ease-in;
+            }
+            > i:nth-of-type(2) {
+                display: none;
+            }
+            > i:nth-of-type(3) {
+                transform: translateY(-7px) rotate(-45deg);
+                transform-origin: center, center;
+                transition: transform 0.1s ease-in;
+            }
+        }
+    }
+    &.hide {
+        transform: translateY(-50px);
+        transition: transform 0.3s ease-in;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        > div:nth-of-type(2) {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            > i {
+                position: absolute;
+                top: 28px;
+                right: 32px;
+                width: 1px;
+                height: 1px;
+                border: 0px solid rgba($primary-color, 1);
+                border-radius: 50%;
+                background-color: rgba($text-light-color, 1);
+                transform: translate(50%, -50%);
+            }
+            > a {
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                align-self: flex-end;
+                z-index: 9;
+            }
+            > ul {
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
+        &.open  {
+            height: 100%;
+            overflow: hidden;
+            z-index: 5;
+            > div:nth-of-type(2) {
+                > i {
+                    width: 2000px;
+                    height: 2000px;
+                    border: 200px solid rgba($primary-color, 1);
+                    transition: all 0.25s ease-in;
+                    z-index: 6;
+                }
+                > ul {
+                    visibility: visible;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: 100%;
+                    height: 100%;
+                    padding: 0;
+                    overflow: hidden;
+                    z-index: 7;
+                    opacity: 1;
+                    transition: opacity 0.5s ease-in;
+                    > li {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        padding-top: 15px;
+                        padding-bottom: 15px;
+                        > a {
+                            font-size: 3rem;
+                            font-weight: 300;
+                            text-decoration: none;
+                            color: $text-neutral-color;
+                        }
+                        &:before {
+                            background: transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

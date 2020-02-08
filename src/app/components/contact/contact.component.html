@@ -1,0 +1,14 @@
+<section>
+  <h3 translate>contact.contact</h3>
+  <i></i>
+  <form [formGroup]="contactForm">
+    <input type="text" placeholder="{{emailPlaceholder | translate}}" formControlName="email" [readonly]="status !== 'send'">
+    <input type="text" placeholder="{{namePlaceholder | translate}}" formControlName="name" [readonly]="status !== 'send'">
+    <input type="text" placeholder="{{subjectPlaceholder | translate}}" formControlName="subject" [readonly]="status !== 'send'">
+    <textarea type="text" rows="8" placeholder="{{messagePlaceholder | translate}}" formControlName="message" [readonly]="status !== 'send'"></textarea>
+    <div>
+      <!-- <p *ngIf="status === 'sended'" (click)="retry()">reset</p> -->
+      <button (click)="mail()" [class.disabled]="!contactForm.valid" [ngClass]="status" [innerHTML]="getStatusText() | translate">{{status}}</button>
+    </div>
+  </form>
+</section>

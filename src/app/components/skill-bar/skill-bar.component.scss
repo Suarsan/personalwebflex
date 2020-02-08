@@ -1,0 +1,20 @@
+div.bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    > p {
+        font-size: 12px;
+        font-weight: 300;
+        margin: 5px 0;
+    }
+    > figure {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        > div {
+            position: relative;
+            width: 80%;
+            height: 100%;
+        }
+    }
+}

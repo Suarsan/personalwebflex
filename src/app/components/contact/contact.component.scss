@@ -1,0 +1,156 @@
+@import '../../../colors';
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $text-dark-color;
+    padding: 100px 12% 75px 12%;
+    h3 {
+        font-size: 5rem;
+        font-weight: 600;
+        padding-top: 50px 0 0 0;
+        margin: 0;
+        text-align: center;
+        color: $text-light-color;
+        text-transform: uppercase;
+    }
+    > i {
+        background-color: rgba($primary-color, 1);
+        margin-top: 15px;
+        width: 100px;
+        height: 2px;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+        margin-top: 75px;
+        > input {
+            height: 40px;
+            font-size: 1.6rem;
+            font-weight: 300;
+            padding: 0 20px;
+            border: 2px solid rgba($text-light-color, 1);
+            border-radius: 3px;
+            color: rgba($text-light-color, 1);
+            background-color: transparent;
+            margin-bottom: 25px;
+            outline: 0;
+        }
+        > textarea {
+            font-size: 1.6rem;
+            font-weight: 300;
+            padding: 20px;
+            border: 2px solid rgba($text-light-color, 1);
+            border-radius: 3px;
+            color: rgba($text-light-color, 1);
+            background-color: transparent;
+            margin-bottom: 25px;
+            overflow: auto;
+            resize: vertical;
+            outline: 0;
+        }
+        > div {
+            display: flex;
+            align-self: flex-end;
+            justify-content: flex-end;
+            vertical-align: middle;
+            width: 40%;
+            > p {
+                font-size: 1.2rem;
+                margin-bottom: 0;
+                padding: 5px 15px 5px 15px;
+                color: rgba($text-light-color, 0.5);
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            > button {
+                align-self: flex-end;
+                width: 100%;
+                font-size: 1.5rem;
+                font-weight: 200;
+                padding: 10px 25px 10px 25px;
+                color: rgba($text-light-color, 1);
+                background-color: transparent;
+                border: 2px solid rgba($text-light-color, 1);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                outline: 0;
+                &.disabled {
+                    border: 2px solid rgba($text-light-color, 0.2);
+                    color: rgba($text-light-color, 0.2);
+                }
+                &.send:not(.disabled){
+                    &:hover {
+                        cursor: pointer;
+                        background-color: rgba($primary-color, 1);
+                        border: 2px solid rgba($primary-color, 1);
+                        transition: background-color 0.5s ease-out;
+                    }
+                }
+                &.sending {
+                    border: 2px solid transparent;
+                    background-color: transparent;
+                    &:hover {
+                        cursor: wait;
+                        border: 2px solid transparent;
+                        background-color: transparent;
+                        transition: background-color 0.2s ease-out;
+                    }
+                }
+                &.sended {
+                    border: 2px solid transparent;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    &:hover {
+                        cursor: default;
+                    }
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 20px;
+                        height: 20px;
+                        background-color: red;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 575px) {
+    section {
+        padding: 75px 2% 50px 2%;
+        > form {
+            width: 96%;
+        }
+    }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+    section {
+        padding: 75px 5% 50px 5%;
+        > form {
+            width: 90%;
+        }
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    section {
+        padding: 75px 10% 50px 10%;
+        > form {
+            width: 80%;
+        }
+    }
+}
+@media (min-width: 1600px) {
+    section {
+        padding: 75px 18% 50px 18%;
+        > form {
+            width: 80%;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+<nav [class.hide]="hideNavbar" [class.open]="showMobileMenu">
+  <div>
+    <a></a>
+  </div>
+  <div>
+    <i></i>
+    <a (click)="toggleMenu()">
+      <div class="menu">
+        <i></i>
+        <i></i>
+        <i></i>
+      </div>
+    </a>
+    <ul>
+      <li (click)="goto('about')"><a translate>navbar.about</a></li>
+      <li (click)="goto('portfolio')"><a translate>navbar.portfolio</a></li>
+      <li (click)="goto('contact')"><a translate>navbar.contact</a></li>
+    </ul>
+  </div>
+</nav>

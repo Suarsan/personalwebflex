@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Javier Suárez Sánchez</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <meta name="theme-color" content="#eeeeee">
+  <style type="text/css">
+    body, html {
+      background-color: rgba(#2cc4d2, 1);
+      height: 100%;
+    }
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes ballPulse {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0;
+      }
+    }
+    .loader-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    .ball-pulse .loader {
+      width: 100px;
+      height: 100px;
+    }
+    .ball-pulse .ball {
+      margin: 25% 0 0 25%;
+      width: 50%;
+      height: 50%;
+      background-color: #FFF;
+      border-radius: 50%;
+      animation: ballPulse 1s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body>
+  <app-root>
+    <div class="loader-container ball-pulse">
+      <div class="loader">
+        <div class="ball"></div>
+      </div>
+    </div>
+  </app-root>
+</body>
+
+</html>

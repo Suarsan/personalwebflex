@@ -1,0 +1,65 @@
+{
+    "navbar" : {
+        "about": "About",
+        "portfolio": "Portfolio",
+        "contact": "Contact"
+    },
+    "about": {
+        "about me": "about <span>me</span>",
+        "story": "Geek empedernido, apasionado de la tecnología y el mundo digital. En formación continua perfeccionando mi perfil fullstack. C me abrió el camino, progresé gracias al POO con Java y acabé enamorado de las posibilidades de javascript. Centrado en el stack MEAN. Extrovertido y habilidoso en el trabajo en equipo, responsable, metódico, con atención en los detalles, comprometido y persistente. ",
+        "downloadcv": "DOWNLOAD CV",
+        "visitmyprofiles": "Visit my profiles"
+    },
+    "portfolio": {
+        "my portfolio": "<span>My</span> portfolio",
+        "duallistbox": {
+            "title": "Dual list box",
+            "description": "Componente para multiselección tipo 'duallistbox' compatible con Angular 2+. Responsive y configurable."
+        },
+        "backoffice_template": {
+            "title": "Backoffice template",
+            "description": "Seed basado en Angular 7. Incluye servicios como inyeccion de notificaciones push, almacenamiento local encriptado..."
+        },
+        "notifications_snackbar": {
+            "title": "Notifications snackbar",
+            "description": "Módulo para notificaciones compatible con Angular 4+, sencillo, multi dispositivo y personalizable."
+        },
+        "qr_tracking": {
+            "title": "QR tracking",
+            "description": "Plugin wordpress para trackear accesos desde códigos QR, geolocalización y control de rebotes."
+        },
+        "spinner_animation": {
+            "title": "Spinner Animation",
+            "description": "Módulo animación para gestionar múltiples spinners compatible con Angular 4+, multi dispositivo y eficiente."
+        },
+        "prestashop_ecommerce": {
+            "title": "Prestashop eCommerce",
+            "description": "Ecommerce completo basado en Prestashop 1.6, RGPD, logística automatizada, SEO/SEM, campañas, RRSS, etc"
+        },
+        "wordpress_web": {
+            "title": "Website and branding",
+            "description": "Sitio corporativo basado en Wordpress, ligero, minimalista y autogestionable. Actualización de imagen corporativa."
+        },
+        "java_weather": {
+            "title": "Weather desktop APP",
+            "description": "Aplicación Java SE de escritorio para mostrar el tiempo meteorológico en la península consumiendo AEMET Open DATA"
+        },
+        "angular_kiosko": {
+            "title": "Kiosko APP",
+            "description": "App cliente basada en Angular 2 para consumir todo tipo de publicaciones, responsive, reactiva y multi dispositivo."
+        }
+    },
+    "quote": {
+        "quote": "Design is not just what it looks like and feels like. Design is how it works."
+    },
+    "contact": {
+        "contact": "contact",
+        "your email": "Your email",
+        "your name": "Your name",
+        "subject": "Subject",
+        "text your message": "Text your message",
+        "send": "SEND",
+        "sending": "SENDING",
+        "sended": "SENDED"
+    }
+}

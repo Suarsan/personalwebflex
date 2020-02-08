@@ -1,0 +1,26 @@
+@import 'main';
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 62.5%;
+    background-color: rgba($primary-color, 1);
+    ::selection {
+        background: $primary-color;
+      }
+}
+
+h1, h2, h3, h4, h5, h6, p, span, button, input, textarea {
+    font-family: 'Raleway', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: #edeced;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #bdbcbd;
+    border-radius: 3px;
+} 

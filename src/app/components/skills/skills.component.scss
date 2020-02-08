@@ -1,0 +1,41 @@
+@import '../../../colors';
+
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: $text-dark-color;
+    padding: 25px 12% 100px 12%;
+    > div {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 50%;
+        flex-wrap: nowrap;
+        > app-skill-bar {
+            margin: 5px 25px 5px 25px;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    section {
+        padding: 25px 5% 75px 5%;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    section {
+        padding: 25px 12% 75px 12%;
+    }
+}
+
+@media (min-width: 1600px) {
+    section {
+        padding: 75px 20% 150px 20%;
+        > div {
+            > app-skill-bar {
+                margin: 15px 25px 15px 25px;
+            }
+        }
+    }
+}
