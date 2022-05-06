@@ -78,11 +78,11 @@ export class ContactComponent implements OnInit {
     return new Observable(
       (observable) => {
         Email.send({
-          Host: 'send.one.com',
-          From: 'contact@javiersuarezsanchez.com',
+          Host: '',
+          From: '',
           To: 'javiersuarsan@gmail.com',
-          Username: 'contact@javiersuarezsanchez.com',
-          Password: 'Suarsin22one',
+          Username: '',
+          Password: '',
           Subject: 'CONTACT EMAIL RECEIVED - ' + this.contactForm.get('subject').value,
           Body: this.contactForm.get('message').value
                 + '<br/><br/>' +
