@@ -1,7 +1,7 @@
 <section>
   <h3 [innerHTML]="'portfolio.my portfolio' | translate"></h3>
   <div>
-    <article>
+    <article [routerLink]="['/project', 'angular_duallistbox']">
       <img src="/assets/images/duallistbox.jpg" alt="angular_duallistbox">
       <div>
         <img src="/assets/icons/angular.svg" alt="angular_icon">
@@ -74,5 +74,4 @@
       </div>
     </article>
   </div>
-  <!-- <img src="/assets/icons/add.svg" alt=""> -->
 </section>

@@ -17,11 +17,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { SkillBarComponent } from './components/skill-bar/skill-bar.component';
 import { TreecvComponent } from './components/treecv/treecv.component';
+import { ProjectDetailComponent } from './project-detail/project-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
+    ProjectDetailComponent,
     HomeComponent,
     NavbarComponent,
     AboutComponent,
