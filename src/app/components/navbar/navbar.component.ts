@@ -1,42 +1,40 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
 
-  hideNavbar: boolean;
-  showMobileMenu: boolean;
-  private previousScroll = 0;
+  private previousScroll: number;
+  hidden: boolean;
+  opened: boolean;
 
-  constructor() { }
-
-  ngOnInit() {
-    this.hideNavbar = false;
-    this.showMobileMenu = false;
+  constructor() { 
+    this.previousScroll = 0;
+    this.hidden = false;
+    this.opened = false;
   }
 
   @HostListener('window:scroll', ['$event'])
-  public onScroll(event) {
+  onScroll(event) {
     if (this.previousScroll < event.path[1].scrollY) {
-      this.hideNavbar = true;
+      this.hidden = true;
     } else {
       if (event.path[1].scrollY < 400) {
-        this.hideNavbar = false;
+        this.hidden = false;
       }
     }
     this.previousScroll = event.path[1].scrollY;
   }
 
-  public toggleMenu() {
-    this.showMobileMenu = !this.showMobileMenu;
-  }
-
-  public goto(destiny) {
-    this.showMobileMenu = !this.showMobileMenu;
-    window.location.hash = destiny;
+  public toggle(state?) {
+    if (undefined === state) {
+      this.opened = !this.opened;
+    } else {
+      this.opened = state;
+    }
   }
 
 }

@@ -1,63 +1,78 @@
 @import '../../../colors';
 
-nav {
+:host {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    position: fixed;
+    flex-direction: column;
     width: 100%;
-    transition: transform 0.1s ease-in;
-    user-select: none;
-    -webkit-user-select: none;
-    > div:nth-of-type(2) {
+    > nav {
+        position: fixed;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+        transition: transform 0.1s ease-in;
+        user-select: none;
+        -webkit-user-select: none;
+        z-index: 100;
+        > i {
+            position: absolute;
+            top: 3.5rem;
+            right: 3.5rem;
+            width: 0;
+            height: 0;
+            border: 0 solid rgba($primary-color, 1);
+            border-radius: 50%;
+            background-color: rgba($text-light-color, 1);
+            transform: translate(50%, -50%);
+        }
         > a {
-            display: none;
-            cursor: pointer;
-            margin: 15px;
-            margin-right: 20px;
-            -webkit-tap-highlight-color: transparent;
-            > div.menu {
-                position: relative;
-                width: 25px;
-                height: 25px;
-                > i {
-                    position: absolute;
-                    width: 100%;
-                    height: 2px;
-                    background-color: $text-neutral-color;
-                    border-radius: 1px;
-                    &:nth-of-type(1) {
-                        top: 4px;
-                        transition: transform 0.1s ease-in;
-                    }
-                    &:nth-of-type(2) {
-                        top: 11px;
-                    }
-                    &:nth-of-type(3) {
-                        top: 18px;
-                        transition: transform 0.1s ease-in;
-                    }
+            position: relative;
+            width: 3rem;
+            min-width: 3rem;
+            height: 3rem;
+            min-height: 3rem;
+            margin: 2rem;
+            
+            > i {
+                position: absolute;
+                width: 3rem;
+                height: 2px;
+                border-radius: 1px;
+                background-color: $text-neutral-color;
+                
+                &:nth-of-type(1) {
+                    top: 20%;
+                }
+                &:nth-of-type(2) {
+                    top: 50%;
+                    transform: translateY(-50%) scaleX(1);
+                }
+                &:nth-of-type(3) {
+                    bottom: 20%;
                 }
             }
         }
-        ul {
-            padding-left: 25px;
-            padding-right: 25px;
-            li {
+        > ul {
+            visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 0;
+            height: 0;
+            opacity: 0;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            > li {
                 display: inline-block;
                 position: relative;
-                padding-top: 10px;
-                padding-bottom: 10px;
-                padding-left: 10px;
-                padding-right: 10px;
-                a {
+                > a {
                     font-size: 1.25rem;
                     font-weight: 300;
                     text-decoration: none;
                     text-transform: uppercase;
                     letter-spacing: 2px;
+                    margin: 2.5rem;
                     color: rgba($text-neutral-color, 1);
                 }
                 &:before {
@@ -76,123 +91,113 @@ nav {
                         transition: all 0.15s;
                     }
                     &:nth-of-type(1):before {
-                        width: 65px;
-                        left: 3px;
+                        width: 90px;
+                        left: 5px;
                     }
                     &:nth-of-type(2):before {
-                        width: 96px;
+                        width: 95px;
                         left: 5px;
                     }
                     &:nth-of-type(3):before {
-                        width: 81px;
+                        width: 80px;
                         left: 5px;
                         
                     }
                 }
             }
         }
-    }
-    &.open {
-        &.hide {
-            transform: unset;
-        }
-        > div:nth-of-type(2) > a > div.menu {
-            > i:nth-of-type(1) {
-                transform: translateY(7px) rotate(45deg);
-                transform-origin: center, center;
-                transition: transform 0.1s ease-in;
-            }
-            > i:nth-of-type(2) {
-                display: none;
-            }
-            > i:nth-of-type(3) {
-                transform: translateY(-7px) rotate(-45deg);
-                transform-origin: center, center;
-                transition: transform 0.1s ease-in;
-            }
-        }
-    }
-    &.hide {
-        transform: translateY(-50px);
-        transition: transform 0.3s ease-in;
-    }
-}
-
-@media (max-width: 768px) {
-    nav {
-        > div:nth-of-type(2) {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            > i {
-                position: absolute;
-                top: 28px;
-                right: 32px;
-                width: 1px;
-                height: 1px;
-                border: 0px solid rgba($primary-color, 1);
-                border-radius: 50%;
-                background-color: rgba($text-light-color, 1);
-                transform: translate(50%, -50%);
-            }
-            > a {
-                display: block;
-                position: absolute;
-                top: 0;
-                right: 0;
-                align-self: flex-end;
-                z-index: 9;
-            }
-            > ul {
-                visibility: hidden;
-                opacity: 0;
-            }
-        }
         &.open  {
             height: 100%;
             overflow: hidden;
             z-index: 5;
-            > div:nth-of-type(2) {
+            > i {
+                width: 250vh;
+                height: 250vh;
+                border: 100vw solid rgba($primary-color, 0);
+                transition: all .5s ease-in;
+            }
+            > a {
                 > i {
-                    width: 2000px;
-                    height: 2000px;
-                    border: 200px solid rgba($primary-color, 1);
-                    transition: all 0.25s ease-in;
-                    z-index: 6;
+                    transition: transform .2s ease-in;
+                    &:nth-of-type(1) {
+                        transform: translate(.5rem, -.25rem) rotate(45deg);
+                        transform-origin: left;
+                    }
+                    &:nth-of-type(2) {
+                        transform: translateY(-50%) scaleX(0);
+                        transform-origin: center;
+                    }
+                    &:nth-of-type(3) {
+                        transform: translate(.5rem, .25rem) rotate(-45deg);
+                        transform-origin: left;
+                    }
                 }
-                > ul {
-                    visibility: visible;
+            }
+            > ul {
+                visibility: visible;
+                width: 100%;
+                height: 100%;
+                opacity: 1;
+                transition: opacity 0.5s ease-in;
+                > li {
                     display: flex;
-                    flex-direction: column;
+                    flex-direction: row;
                     justify-content: center;
-                    width: 100%;
-                    height: 100%;
-                    padding: 0;
-                    overflow: hidden;
-                    z-index: 7;
-                    opacity: 1;
-                    transition: opacity 0.5s ease-in;
-                    > li {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: center;
-                        padding-top: 15px;
-                        padding-bottom: 15px;
-                        > a {
-                            font-size: 3rem;
-                            font-weight: 300;
-                            text-decoration: none;
-                            color: $text-neutral-color;
-                        }
-                        &:before {
-                            background: transparent;
-                        }
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    > a {
+                        font-size: 3rem;
+                        font-weight: 300;
+                        text-decoration: none;
+                        color: $text-neutral-color;
+                    }
+                    &:before {
+                        background: transparent;
                     }
                 }
             }
         }
     }
 }
+
+// @media screen and (min-width: 768px) {
+//     :host {
+//         > nav {
+            // > a {
+            //     display: none;
+            //     cursor: pointer;
+            //     margin: 15px;
+            //     margin-right: 20px;
+            //     -webkit-tap-highlight-color: transparent;
+            // }
+//             > ul {
+//                 padding-left: 25px;
+//                 padding-right: 25px;
+//             }
+//             &.open {
+//                 &.hide {
+//                     transform: unset;
+//                 }
+//                 > a {
+//                     > i:nth-of-type(1) {
+//                         transform: translateY(7px) rotate(45deg);
+//                         transform-origin: center, center;
+//                         transition: transform 0.1s ease-in;
+//                     }
+//                     > i:nth-of-type(2) {
+//                         display: none;
+//                     }
+//                     > i:nth-of-type(3) {
+//                         transform: translateY(-7px) rotate(-45deg);
+//                         transform-origin: center, center;
+//                         transition: transform 0.1s ease-in;
+//                     }
+//                 }
+//             }
+//             &.hide {
+//                 transform: translateY(-50px);
+//                 transition: transform 0.3s ease-in;
+//             }
+//         }
+//     }
+// }
