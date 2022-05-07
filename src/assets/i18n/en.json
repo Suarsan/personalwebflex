@@ -5,8 +5,9 @@
         "contact": "Contact"
     },
     "about": {
-        "about me": "About <span>me</span>",
-        "story": "Geek empedernido, apasionado de la tecnología y el mundo digital. En formación continua perfeccionando mi perfil fullstack. C me abrió el camino, progresé gracias al POO con Java y acabé enamorado de las posibilidades de javascript. Centrado en el stack MEAN. Extrovertido y habilidoso en el trabajo en equipo, responsable, metódico, con atención en los detalles, comprometido y persistente. ",
+        "about": "About",
+        "me": "me",
+        "story": "In love with Angular. Getting involved in Node world and improving fullstack profile. Technology enthusiast. Outgoing and team player. Responsible, methodical, attention to detail, committed and persistant. C paved me the way, Java and OOP helped me to advance and javascript + typescript keep me astonished",
         "downloadcv": "DOWNLOAD CV",
         "visitmyprofiles": "Visit my profiles"
     },
