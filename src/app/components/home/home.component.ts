@@ -18,18 +18,18 @@ export class HomeComponent implements OnInit {
   }
 
   @HostListener('window:resize', ['event'])
-  private onResize() {
+  onResize() {
     if (window.innerWidth > 768) {
       this.setHeight();
       this.setLayout();
     }
   }
 
-  public setHeight() {
+  private setHeight() {
     this.screenHeight = window.innerHeight;
   }
 
-  public setLayout() {
+  private setLayout() {
     if (window.innerWidth < 768) {
       this.topSpace = this.screenHeight * 0.2;
     } else {
