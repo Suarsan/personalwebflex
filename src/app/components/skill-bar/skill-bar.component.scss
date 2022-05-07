@@ -1,7 +1,8 @@
-div.bar {
+:host {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    margin: 0 2rem 2rem 0;
+    transition: filter .15s ease-in;
     > p {
         font-size: 12px;
         font-weight: 300;
@@ -10,11 +11,17 @@ div.bar {
     > figure {
         position: relative;
         width: 100%;
+        height: 2rem;
         margin: 0;
         > div {
             position: relative;
-            width: 80%;
+            width: 0;
             height: 100%;
+            transition: width 2s ease-in;
         }
+    }
+    &:hover {
+        filter: brightness(125%);
+        transition: filter .05s ease-in;
     }
 }

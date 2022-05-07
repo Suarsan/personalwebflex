@@ -1,6 +1,4 @@
-<div class="bar">
-  <p [style.color]="titleColor">{{title ? title : 'Skill'}}</p>
-  <figure [style.backgroundColor]="outColor" [style.height]="height">
-    <div [style.width]="getValue()" [style.backgroundColor]="inColor"></div>
-  </figure>
-</div>
+<p [style.color]="titleColor">{{ title }}</p>
+<figure [style.backgroundColor]="outColor">
+  <div [style.width.%]="value" [style.backgroundColor]="inColor"></div>
+</figure>
