@@ -1,11 +1,11 @@
 {
     "navbar" : {
-        "about": "About",
+        "about": "About me",
         "portfolio": "Portfolio",
         "contact": "Contact"
     },
     "about": {
-        "about me": "about <span>me</span>",
+        "about me": "About <span>me</span>",
         "story": "Geek empedernido, apasionado de la tecnología y el mundo digital. En formación continua perfeccionando mi perfil fullstack. C me abrió el camino, progresé gracias al POO con Java y acabé enamorado de las posibilidades de javascript. Centrado en el stack MEAN. Extrovertido y habilidoso en el trabajo en equipo, responsable, metódico, con atención en los detalles, comprometido y persistente. ",
         "downloadcv": "DOWNLOAD CV",
         "visitmyprofiles": "Visit my profiles"
