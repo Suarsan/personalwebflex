@@ -13,24 +13,19 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.setHeight();
-    this.setLayout();
+    this.layout();
   }
 
   @HostListener('window:resize', ['event'])
   onResize() {
     if (window.innerWidth > 768) {
-      this.setHeight();
-      this.setLayout();
+      this.layout();
     }
   }
-
-  private setHeight() {
+  
+  private layout() {
     this.screenHeight = window.innerHeight;
-  }
-
-  private setLayout() {
-    if (window.innerWidth < 768) {
+    if (this.screenHeight < 768) {
       this.topSpace = this.screenHeight * 0.2;
     } else {
       this.topSpace = this.screenHeight * 0.3;
