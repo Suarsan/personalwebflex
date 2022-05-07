@@ -22,7 +22,7 @@ export class NavbarComponent {
     if (this.previousScroll < event.path[1].scrollY) {
       this.hidden = true;
     } else {
-      if (event.path[1].scrollY < 400) {
+      if (event.path[1].scrollY < 300) {
         this.hidden = false;
       }
     }

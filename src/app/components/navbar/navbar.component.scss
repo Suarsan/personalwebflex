@@ -13,7 +13,7 @@
         transition: transform 0.1s ease-in;
         user-select: none;
         -webkit-user-select: none;
-        z-index: 100;
+        overflow: hidden;
         > i {
             position: absolute;
             top: 3.5rem;
@@ -24,6 +24,7 @@
             border-radius: 50%;
             background-color: rgba($text-light-color, 1);
             transform: translate(50%, -50%);
+            z-index: 101;
         }
         > a {
             position: relative;
@@ -32,14 +33,13 @@
             height: 3rem;
             min-height: 3rem;
             margin: 2rem;
-            
+            z-index: 102;
             > i {
                 position: absolute;
                 width: 3rem;
                 height: 2px;
                 border-radius: 1px;
-                background-color: $text-neutral-color;
-                
+                background-color: rgba($text-neutral-color, 1);
                 &:nth-of-type(1) {
                     top: 20%;
                 }
@@ -63,74 +63,46 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
+            z-index: 102;
             > li {
-                display: inline-block;
-                position: relative;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                padding: 5rem 0;
                 > a {
-                    font-size: 1.25rem;
+                    font-size: 4rem;
                     font-weight: 300;
                     text-decoration: none;
-                    text-transform: uppercase;
-                    letter-spacing: 2px;
-                    margin: 2.5rem;
                     color: rgba($text-neutral-color, 1);
                 }
-                &:before {
-                    content: '';
-                    position: absolute;
-                    top: -14px;
-                    height: 0;
-                    background: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
-                    transform: perspective(100px) rotateX(45deg);
-                }
-                &:hover {
-                    cursor: pointer;
-                    text-shadow: 0px 3px 1px rgba($text-neutral-color, 0.05);
-                    &:before {
-                        height: 40px;
-                        transition: all 0.15s;
-                    }
-                    &:nth-of-type(1):before {
-                        width: 90px;
-                        left: 5px;
-                    }
-                    &:nth-of-type(2):before {
-                        width: 95px;
-                        left: 5px;
-                    }
-                    &:nth-of-type(3):before {
-                        width: 80px;
-                        left: 5px;
-                        
-                    }
-                }
             }
+        }
+        &:not(.open).hide {
+            transform: translateY(-10rem);
+            transition: transform .5s ease-in;
         }
         &.open  {
             height: 100%;
             overflow: hidden;
-            z-index: 5;
             > i {
                 width: 250vh;
                 height: 250vh;
                 border: 100vw solid rgba($primary-color, 0);
                 transition: all .5s ease-in;
             }
-            > a {
-                > i {
-                    transition: transform .2s ease-in;
-                    &:nth-of-type(1) {
-                        transform: translate(.5rem, -.25rem) rotate(45deg);
-                        transform-origin: left;
-                    }
-                    &:nth-of-type(2) {
-                        transform: translateY(-50%) scaleX(0);
-                        transform-origin: center;
-                    }
-                    &:nth-of-type(3) {
-                        transform: translate(.5rem, .25rem) rotate(-45deg);
-                        transform-origin: left;
-                    }
+            > a > i {
+                transition: transform .2s ease-in;
+                &:nth-of-type(1) {
+                    transform: translate(.5rem, -.25rem) rotate(45deg);
+                    transform-origin: left;
+                }
+                &:nth-of-type(2) {
+                    transform: translateY(-50%) scaleX(0);
+                    transform-origin: center;
+                }
+                &:nth-of-type(3) {
+                    transform: translate(.5rem, .25rem) rotate(-45deg);
+                    transform-origin: left;
                 }
             }
             > ul {
@@ -138,21 +110,60 @@
                 width: 100%;
                 height: 100%;
                 opacity: 1;
-                transition: opacity 0.5s ease-in;
+                transition: opacity 1s ease-in;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    :host {
+        > nav {
+            > i, > a {
+                display: none;
+            }
+            &.open {
+                height: initial;
+                overflow: initial;
+            }
+            > ul {
+                visibility: visible;
+                flex-direction: row;
+                justify-content: flex-end;
+                width: 100%;
+                height: 100%;
+                opacity: 1;
+                padding: 0 5rem;
                 > li {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    padding-top: 15px;
-                    padding-bottom: 15px;
+                    position: relative;
+                    padding: 0;
                     > a {
-                        font-size: 3rem;
+                        font-size: 1.25rem;
                         font-weight: 300;
                         text-decoration: none;
-                        color: $text-neutral-color;
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+                        padding: 3.5rem 2.5rem;
+                        color: rgba($text-neutral-color, 1);
                     }
                     &:before {
-                        background: transparent;
+                        content: '';
+                        position: absolute;
+                        top: -5rem;
+                        width: 100%;
+                        height: 5rem;
+                        background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .25) 20%, rgba(255, 255, 255, .8) 40%, rgba(255, 255, 255, 1) 100%);
+                        transform: perspective(50px) rotateX(45deg);
+                    }
+                    &:hover {
+                        > a {
+                            color: rgba($text-dark-color, 1);
+                        }
+                        &:before {
+                            top: -1rem;
+                            transform: perspective(150px) rotateX(45deg);
+                            transition: all 0.5s;
+                        }
                     }
                 }
             }
@@ -160,44 +171,5 @@
     }
 }
 
-// @media screen and (min-width: 768px) {
-//     :host {
-//         > nav {
-            // > a {
-            //     display: none;
-            //     cursor: pointer;
-            //     margin: 15px;
-            //     margin-right: 20px;
-            //     -webkit-tap-highlight-color: transparent;
-            // }
-//             > ul {
-//                 padding-left: 25px;
-//                 padding-right: 25px;
-//             }
-//             &.open {
-//                 &.hide {
-//                     transform: unset;
-//                 }
-//                 > a {
-//                     > i:nth-of-type(1) {
-//                         transform: translateY(7px) rotate(45deg);
-//                         transform-origin: center, center;
-//                         transition: transform 0.1s ease-in;
-//                     }
-//                     > i:nth-of-type(2) {
-//                         display: none;
-//                     }
-//                     > i:nth-of-type(3) {
-//                         transform: translateY(-7px) rotate(-45deg);
-//                         transform-origin: center, center;
-//                         transition: transform 0.1s ease-in;
-//                     }
-//                 }
-//             }
-//             &.hide {
-//                 transform: translateY(-50px);
-//                 transition: transform 0.3s ease-in;
-//             }
-//         }
-//     }
-// }
+
+
