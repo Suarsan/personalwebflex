@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProjectDetailComponent } from './project-detail.component';
+import { DemoNgxDuallistboxComponent } from './demo-ngx-duallistbox.component';
 
-describe('ProjectDetailComponent', () => {
-  let component: ProjectDetailComponent;
-  let fixture: ComponentFixture<ProjectDetailComponent>;
+describe('DemoNgxDuallistboxComponent', () => {
+  let component: DemoNgxDuallistboxComponent;
+  let fixture: ComponentFixture<DemoNgxDuallistboxComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProjectDetailComponent ]
+      declarations: [ DemoNgxDuallistboxComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProjectDetailComponent);
+    fixture = TestBed.createComponent(DemoNgxDuallistboxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

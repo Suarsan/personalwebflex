@@ -1,4 +1,4 @@
-@import '../../colors';
+@import '../../../../colors';
 :host {
     display: flex;
     flex-direction: column;
@@ -12,7 +12,7 @@
         > div {
             display: flex;
             flex-direction: column;
-            > div:nth-of-type(1) {
+            > header {
                 display: flex;
                 flex-direction: column;
                 > a > img {
@@ -23,14 +23,28 @@
                 > h1 {
                     font-size: 3rem;
                     font-weight: 500;
+                    color: rgba($text-dark-color, 1);
                 }
             }
             > p {
                 font-size: 1.75rem;
             }
-            > div:nth-of-type(2) {
+            > figure {
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin: 25px;
+                padding: 0;
+                background-color: rgba($text-light-color, 1);
+                > ngx-duallistbox {
+                    margin: 25px;
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+            }
+            > div {
+                display: flex;
+                flex-direction: row;
                 > a {
                     display: flex;
                     flex-direction: row;
@@ -72,14 +86,14 @@
     :host {
         > main {
             > div {
-                > div:nth-of-type(1) {
+                > header {
                     flex-direction: row;
                     align-items: center;
                     margin: 7.5rem 0 5rem 0;
                 }
-                > div:nth-of-type(2) {
-                    > a {
-                        margin: 5rem 2rem 5rem 0;
+                > figure {
+                    > ngx-duallistbox {
+                        width: 50%;
                     }
                 }
             }
@@ -93,16 +107,15 @@
             > div {
                 width: 900px;
                 margin: 0 auto;
-                > div:nth-of-type(1) {
+                > header {
                     margin: 10rem 0 7.5rem 0;
                     > h1 {
                         font-size: 5rem;
                     }
                 }
-                > div:nth-of-type(2) {
-                    flex-direction: row;
-                    > a {
-                        margin: 7.5rem 2rem 7.5rem 0;
+                > figure {
+                    > ngx-duallistbox {
+                        width: 33%;
                     }
                 }
             }

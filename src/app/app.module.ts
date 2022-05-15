@@ -17,13 +17,14 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { SkillBarComponent } from './components/skill-bar/skill-bar.component';
 import { TreecvComponent } from './components/treecv/treecv.component';
-import { ProjectDetailComponent } from './project-detail/project-detail.component';
+import { DemoNgxDuallistboxComponent } from './components/portfolio/demo-ngx-duallistbox/demo-ngx-duallistbox.component';
+import { NgxDuallistboxModule } from '@suarsan/ngx-duallistbox';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
-    ProjectDetailComponent,
+    DemoNgxDuallistboxComponent,
     HomeComponent,
     NavbarComponent,
     AboutComponent,
@@ -40,6 +41,7 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgxDuallistboxModule,
     TranslateModule.forRoot({
       loader: {
           provide: TranslateLoader,

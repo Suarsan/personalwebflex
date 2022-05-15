@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ProjectDetailComponent } from './project-detail/project-detail.component';
+import { DemoNgxDuallistboxComponent } from './components/portfolio/demo-ngx-duallistbox/demo-ngx-duallistbox.component';
 import { LandingComponent } from './landing/landing.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
-  { path: 'project/:projectid', component: ProjectDetailComponent }
+  { path: 'ngx-duallistbox', component: DemoNgxDuallistboxComponent }
 ];
 
 @NgModule({
