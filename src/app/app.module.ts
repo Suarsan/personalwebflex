@@ -12,12 +12,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AboutComponent } from './components/about/about.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { QuoteComponent } from './components/quote/quote.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { SkillBarComponent } from './components/skill-bar/skill-bar.component';
-import { TreecvComponent } from './components/treecv/treecv.component';
-import { DemoNgxDuallistboxComponent } from './components/portfolio/demo-ngx-duallistbox/demo-ngx-duallistbox.component';
+import { DemoNgxDuallistboxComponent } from './demo-ngx-duallistbox/demo-ngx-duallistbox.component';
 import { NgxDuallistboxModule } from '@suarsan/ngx-duallistbox';
 
 @NgModule({
@@ -30,11 +28,9 @@ import { NgxDuallistboxModule } from '@suarsan/ngx-duallistbox';
     AboutComponent,
     PortfolioComponent,
     ContactComponent,
-    QuoteComponent,
     FooterComponent,
     SkillsComponent,
-    SkillBarComponent,
-    TreecvComponent
+    SkillBarComponent
   ],
   imports: [
     BrowserModule,
