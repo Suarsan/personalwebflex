@@ -1,11 +1,11 @@
+<header>
+    <a [routerLink]="['/']">
+        <img src="assets/icons/back.svg">
+    </a>
+    <h1>{{ 'portfolio.duallistbox.title' | translate }}</h1>
+</header>
 <main>
     <div>
-        <header>
-            <a [routerLink]="['/']">
-                <img src="assets/icons/back.svg">
-            </a>
-            <h1>{{ 'portfolio.duallistbox.title' | translate }}</h1>
-        </header>
         <p>{{ 'portfolio.duallistbox.description' | translate }}</p>
         <figure>
             <ngx-duallistbox

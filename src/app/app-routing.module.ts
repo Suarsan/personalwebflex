@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DemoNgxDuallistboxComponent } from './components/portfolio/demo-ngx-duallistbox/demo-ngx-duallistbox.component';
+import { DemoNgxDuallistboxComponent } from './demo-ngx-duallistbox/demo-ngx-duallistbox.component';
 import { LandingComponent } from './landing/landing.component';
 
 const routes: Routes = [

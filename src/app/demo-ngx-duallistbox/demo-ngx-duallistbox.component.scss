@@ -1,38 +1,37 @@
-@import '../../../../colors';
+@import '../../colors';
 :host {
     display: flex;
     flex-direction: column;
     min-height: 100%;
+    background-color: $text-light-color;
+    padding: 7.5rem 10%;
+    > header {
+        display: flex;
+        flex-direction: column;
+        > a > img {
+            width: 5rem;
+            height: 5rem;
+            margin-right: 5rem;
+        }
+        > h1 {
+            font-size: 3rem;
+            font-weight: 500;
+            color: rgba($text-dark-color, 1);
+        }
+    }
     > main {
         display: flex;
         flex-direction: column;
-        background-color: $text-light-color;
         flex-grow: 1;
-        padding: 7.5rem 10%;
         > div {
             display: flex;
             flex-direction: column;
-            > header {
-                display: flex;
-                flex-direction: column;
-                > a > img {
-                    width: 5rem;
-                    height: 5rem;
-                    margin-right: 5rem;
-                }
-                > h1 {
-                    font-size: 3rem;
-                    font-weight: 500;
-                    color: rgba($text-dark-color, 1);
-                }
-            }
             > p {
                 font-size: 1.75rem;
             }
             > figure {
                 display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
+                flex-direction: column;
                 margin: 25px;
                 padding: 0;
                 background-color: rgba($text-light-color, 1);
@@ -45,6 +44,7 @@
             > div {
                 display: flex;
                 flex-direction: row;
+                flex-wrap: wrap;
                 > a {
                     display: flex;
                     flex-direction: row;
@@ -84,14 +84,16 @@
 
 @media screen and (min-width: 768px) {
     :host {
+        > header {
+            flex-direction: row;
+            align-items: center;
+            margin: 7.5rem 0 5rem 0;
+        }
         > main {
             > div {
-                > header {
-                    flex-direction: row;
-                    align-items: center;
-                    margin: 7.5rem 0 5rem 0;
-                }
                 > figure {
+                    flex-direction: row;
+                    flex-wrap: wrap;
                     > ngx-duallistbox {
                         width: 50%;
                     }
@@ -103,16 +105,17 @@
 
 @media screen and (min-width: 1024px) {
     :host {
+        > header {
+            width: 900px;
+            margin: 7.5rem auto 5rem auto;
+            > h1 {
+                font-size: 5rem;
+            }
+        }
         > main {
+            width: 900px;
+            margin: 0 auto;
             > div {
-                width: 900px;
-                margin: 0 auto;
-                > header {
-                    margin: 10rem 0 7.5rem 0;
-                    > h1 {
-                        font-size: 5rem;
-                    }
-                }
                 > figure {
                     > ngx-duallistbox {
                         width: 33%;
