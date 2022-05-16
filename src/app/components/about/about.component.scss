@@ -1,130 +1,123 @@
 @import '../../../colors';
 
-section {
+:host {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background-color: $text-dark-color;
-    padding: 75px 12% 75px 12%;
-    > article {
+    flex-direction: column;
+    > section {
         display: flex;
         flex-direction: column;
-        flex-basis: 50%;
-        padding-top: 25px;
-        padding-bottom: 25px;
-        > h3 {
-            font-size: 5rem;
-            font-weight: 600;
-            padding-bottom: 0;
-            margin: 0;
-            color: $text-light-color;
-            text-transform: uppercase;
-        }
-        > i {
-            background-color: rgba($primary-color, 1);
-            width: 100px;
-            height: 2px;
-            margin-top: 15px;
-        }
-        > p {
-            font-size: 1.75rem;
-            font-weight: 200;
-            margin-top: 50px;
-            text-align: justify;
-            line-height: 1.2;
-            color: $text-light-color;
-        }
-        button {
-            font-size: 1.5rem;
-            font-weight: 200;
-            width: fit-content;
-            letter-spacing: 2px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            padding-left: 25px;
-            padding-right: 25px;
-            margin-top: 25px;
-            color: rgba($text-light-color, 1);
-            background-color: transparent;
-            border: 2px solid rgba($text-light-color, 1);
-            outline: 0;
-            &:hover {
-                cursor: pointer;
+        background-color: $text-dark-color;
+        padding: 5rem 12%;
+        > article {
+            display: flex;
+            flex-direction: column;
+            padding: 2.5rem 0;
+            > h3 {
+                font-size: 5rem;
+                font-weight: 600;
+                margin: 0;
+                color: $text-light-color;
+                text-transform: uppercase;
+                > span {
+                    font-weight: 100;
+                }
+            }
+            > i {
+                background-color: rgba($primary-color, 1);
+                width: 100px;
+                height: 2px;
+                margin-top: 1.5rem;
+            }
+            > p {
+                font-size: 1.75rem;
+                font-weight: 200;
+                margin: 7.5rem 0 5rem 0;
+                text-align: left;
+                line-height: 1.2;
+                letter-spacing: 1px;
+                color: $text-light-color;
+            }
+            > button {
+                font-size: 1.5rem;
+                font-weight: 200;
+                width: fit-content;
+                letter-spacing: 2px;
+                padding: 2rem 4rem;
+                margin: 2.5rem;
+                color: rgba($text-light-color, 1);
                 background-color: rgba($primary-color, 1);
                 border: 2px solid rgba($primary-color, 1);
-                transition: background-color 0.5s ease-out;
+                outline: 0;
+                transition: background-color .15s ease-in;
+                align-self: center;
+                &:hover {
+                    cursor: pointer;
+                    background-color: rgba($primary-color, 1);
+                    border: 2px solid rgba($primary-color, 1);
+                    transition: background-color 0.5s ease-out;
+                }
             }
-        }
-        > span {
-            font-size: 1.75rem;
-            font-weight: 200;
-            padding-top: 25px;
-            margin-bottom: 25px;
-            letter-spacing: 5px;
-            color: $text-light-color;
-        }
-        > div {
-            > a {
-                > img {
-                    width: 40px;
-                    height: 40px;
-                    margin: 10px;
-                    filter: brightness(4);
-                    transition: all 0.2s ease-out;
-                    &:hover {
-                        transition: all 0.2s ease-out;
-                        transform: scale(1.25);
+            > span {
+                font-size: 1.75rem;
+                font-weight: 200;
+                margin: 2.5rem 0;
+                letter-spacing: 5px;
+                color: $text-light-color;
+            }
+            > div {
+                > a {
+                    > img {
+                        width: 40px;
+                        height: 40px;
+                        margin: 1.5rem;
+                        filter: brightness(4);
+                        transition: all .2s ease-out;
+                        &:hover {
+                            transition: all .2s ease-out;
+                            transform: scale(1.25);
+                        }
                     }
                 }
             }
-        }
-        &:nth-of-type(2) {
-            justify-content: center;
-            align-items: center;
+            &:nth-of-type(2) {
+                justify-content: center;
+                align-items: center;
+            }
         }
     }
 }
 
-@media (max-width: 575px) {
-    section {
-        padding: 50px 5% 50px 5%;
-        article {
-            flex-basis: 100%;
-            h3 {
-                font-size: 4rem;
-            }
-            button {
-                background-color: rgba($primary-color, 1);
-                border: 2px solid rgba($primary-color, 1);
-                align-self: center;
+@media (min-width: 768px) {
+    :host {
+        > section {
+            flex-direction: row;
+            padding: 5rem 12%;
+            > article {
+                flex-basis: 50%;
+                > button {
+                    background-color: transparent;
+                    border: 2px solid rgba($text-light-color, 1);
+                    align-self: flex-start;
+                }
             }
         }
     }
 }
-@media (min-width: 576px) and (max-width: 767px) {
-    section {
-        padding: 50px 10% 50px 10%;
-        article {
-            flex-basis: 100%;
-            h3 {
-                font-size: 4rem;
-            }
-            button {
+@media (min-width: 992px) {
+    :host {
+        > section {
+            padding: 7.5rem 12%;
+            > article > button {
                 margin-left: 0;
-                background-color: rgba($primary-color, 1);
-                border: 2px solid rgba($primary-color, 1);
-                align-self: center;
             }
         }
     }
 }
 
 @media (min-width: 1600px) {
-    section {
-        padding: 100px 18% 50px 18%;
+    :host {
+        > section {
+            padding: 10rem 12%;
+        }
     }
-}
-
-::ng-deep section > article > h3 > span {
-    font-weight: 100;
 }

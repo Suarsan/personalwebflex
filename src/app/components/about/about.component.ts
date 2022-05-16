@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 declare const window;
 
@@ -14,9 +14,9 @@ export class AboutComponent implements OnInit {
   ngOnInit() { }
 
   public downloadCV() {
-    window.open('assets/javiersuarezsanchez_cv_2019.pdf', '_blank');
+    window.open('assets/javiersuarezsanchez_cv.pdf', '_blank');
     const anchor = document.createElement('a');
-    anchor.setAttribute('href', 'assets/javiersuarezsanchez_cv_2019.pdf');
+    anchor.setAttribute('href', 'assets/javiersuarezsanchez_cv.pdf');
     anchor.setAttribute('download', '');
     document.body.appendChild(anchor);
     anchor.click();

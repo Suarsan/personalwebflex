@@ -1,20 +1,21 @@
 {
     "navbar" : {
-        "about": "About",
+        "about": "About me",
         "portfolio": "Portfolio",
         "contact": "Contact"
     },
     "about": {
-        "about me": "about <span>me</span>",
-        "story": "Geek empedernido, apasionado de la tecnología y el mundo digital. En formación continua perfeccionando mi perfil fullstack. C me abrió el camino, progresé gracias al POO con Java y acabé enamorado de las posibilidades de javascript. Centrado en el stack MEAN. Extrovertido y habilidoso en el trabajo en equipo, responsable, metódico, con atención en los detalles, comprometido y persistente. ",
+        "about": "About",
+        "me": "me",
+        "story": "In love with Angular. Getting involved in Node world and improving fullstack profile. Technology enthusiast. Outgoing and team player. Responsible, methodical, attention to detail, committed and persistant. C paved me the way, Java and OOP helped me to advance and javascript + typescript keep me astonished.",
         "downloadcv": "DOWNLOAD CV",
         "visitmyprofiles": "Visit my profiles"
     },
     "portfolio": {
         "my portfolio": "<span>My</span> portfolio",
         "duallistbox": {
-            "title": "Dual list box",
-            "description": "Componente para multiselección tipo 'duallistbox' compatible con Angular 2+. Responsive y configurable."
+            "title": "@suarsan/ngx-duallistbox",
+            "description": "A full featured and customizable dual list box selector for Angular."
         },
         "backoffice_template": {
             "title": "Backoffice template",
@@ -61,5 +62,7 @@
         "send": "SEND",
         "sending": "SENDING",
         "sended": "SENDED"
-    }
+    },
+    "view on github": "View on Github",
+    "view on NPM": "View on NPM"
 }

@@ -1,78 +1,15 @@
 <section>
   <h3 [innerHTML]="'portfolio.my portfolio' | translate"></h3>
   <div>
-    <article>
-      <img src="/assets/images/duallistbox.jpg" alt="angular_duallistbox">
-      <div>
-        <img src="/assets/icons/angular.svg" alt="angular_icon">
-        <h4 translate>portfolio.duallistbox.title</h4>
-        <h5 translate>portfolio.duallistbox.description</h5>
-      </div>
-    </article>
-    <article>
-      <img src="/assets/images/backoffice.jpg" alt="angular_backofficetemplate">
-      <div>
-        <img src="/assets/icons/angular.svg" alt="angular_icon">
-        <h4 translate>portfolio.backoffice_template.title</h4>
-        <h5 translate>portfolio.backoffice_template.description</h5>
-      </div>
-    </article>
-    <article>
-      <img src="/assets/images/snackbar.jpg" alt="angular_notificationssnackbar">
-      <div>
-        <img src="/assets/icons/angular.svg" alt="angular_icon">
-        <h4 translate>portfolio.notifications_snackbar.title</h4>
-        <h5 translate>portfolio.notifications_snackbar.description</h5>
-      </div>
-    </article>
-    <article>
-      <img src="/assets/images/qr.jpg" alt="wordpress_qrtracking">
-      <div>
-        <img src="/assets/icons/wordpress.svg" alt="wordpress_icon">
-        <h4 translate>portfolio.qr_tracking.title</h4>
-        <h5 translate>portfolio.qr_tracking.description</h5>
-      </div>
-    </article>
-    <article>
-      <img src="/assets/images/spinner.jpg" alt="angular_spinneranimation">
-      <div>
-        <img src="/assets/icons/angular.svg" alt="angular_icon">
-        <h4 translate>portfolio.spinner_animation.title</h4>
-        <h5 translate>portfolio.spinner_animation.description</h5>
-      </div>
-    </article>
-    <article>
-      <img src="/assets/images/hgv.jpg" alt="prestashop_ecommerce">
-      <div>
-        <img src="/assets/icons/prestashop.svg" alt="prestashop_icon">
-        <h4 translate>portfolio.prestashop_ecommerce.title</h4>
-        <h5 translate>portfolio.prestashop_ecommerce.description</h5>
-      </div>
-    </article>
-    <article>
-      <img src="/assets/images/concrete.jpg" alt="wordpress_web">
-      <div>
-        <img src="/assets/icons/wordpress.svg" alt="wordpress_icon">
-        <h4 translate>portfolio.wordpress_web.title</h4>
-        <h5 translate>portfolio.wordpress_web.description</h5>
-      </div>
-    </article>
-    <article>
-      <img src="/assets/images/weather.jpg" alt="java_weather">
-      <div>
-        <img src="/assets/icons/java.svg" alt="java_icon">
-        <h4 translate>portfolio.java_weather.title</h4>
-        <h5 translate>portfolio.java_weather.description</h5>
-      </div>
-    </article>
-    <article>
-      <img src="/assets/images/kiosko.jpg" alt="angular_kiosko">
-      <div>
-        <img src="/assets/icons/angular.svg" alt="angular_icon">
-        <h4 translate>portfolio.angular_kiosko.title</h4>
-        <h5 translate>portfolio.angular_kiosko.description</h5>
-      </div>
-    </article>
+    <a routerLink="ngx-duallistbox">
+      <article>
+        <img src="assets/images/projects/ngx-duallistbox.png" alt="@suarsan/ngx-duallistbox">
+        <div>
+          <img src="assets/icons/angular.svg" alt="angular">
+          <h4>{{ 'portfolio.duallistbox.title' | translate }}</h4>
+          <h5>{{ 'portfolio.duallistbox.description' | translate }}</h5>
+        </div>
+      </article>
+    </a>
   </div>
-  <!-- <img src="/assets/icons/add.svg" alt=""> -->
 </section>

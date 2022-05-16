@@ -1,20 +1,13 @@
-<nav [class.hide]="hideNavbar" [class.open]="showMobileMenu">
-  <div>
-    <a></a>
-  </div>
-  <div>
+<nav [class.hide]="hidden" [class.open]="opened">
+  <i></i>
+  <a (click)="toggle()">
     <i></i>
-    <a (click)="toggleMenu()">
-      <div class="menu">
-        <i></i>
-        <i></i>
-        <i></i>
-      </div>
-    </a>
-    <ul>
-      <li (click)="goto('about')"><a translate>navbar.about</a></li>
-      <li (click)="goto('portfolio')"><a translate>navbar.portfolio</a></li>
-      <li (click)="goto('contact')"><a translate>navbar.contact</a></li>
-    </ul>
-  </div>
+    <i></i>
+    <i></i>
+  </a>
+  <ul>
+    <li (click)="toggle(false)"><a href="#about">{{ 'navbar.about' | translate }}</a></li>
+    <li (click)="toggle(false)"><a href="#portfolio">{{ 'navbar.portfolio' | translate }}</a></li>
+    <li (click)="toggle(false)"><a href="#contact">{{ 'navbar.contact' | translate }}</a></li>
+  </ul>
 </nav>
