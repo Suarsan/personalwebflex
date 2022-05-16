@@ -21,6 +21,7 @@
     "@angular/router": "~13.3.6",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
+    "@suarsan/ngx-duallistbox": "^0.0.2",
     "core-js": "^2.5.4",
     "rxjs": "~6.5.4",
     "zone.js": "~0.11.5"

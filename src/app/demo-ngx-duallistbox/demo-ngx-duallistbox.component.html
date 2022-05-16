@@ -1,0 +1,52 @@
+<header>
+    <a [routerLink]="['/']">
+        <img src="assets/icons/back.svg">
+    </a>
+    <h1>{{ 'portfolio.duallistbox.title' | translate }}</h1>
+</header>
+<main>
+    <div>
+        <p>{{ 'portfolio.duallistbox.description' | translate }}</p>
+        <figure>
+            <ngx-duallistbox
+                [title]="'Basic'"
+                [inData]="inData1" 
+                [outData]="outData1" 
+                [inputId]="'id'" 
+                [outputId]="'id'" 
+                [display]="['name']"
+            ></ngx-duallistbox>
+            <ngx-duallistbox
+                [title]="'With filters'"
+                [inData]="inData1" 
+                [outData]="outData2" 
+                [inputId]="'id'" 
+                [outputId]="'id'" 
+                [display]="['name', 'age']"
+                [showFilterInput]="true" 
+                [showFilterOutput]="true" 
+                [filterInputKeys]="['name']" 
+                [filterOutputKeys]="['name']"
+            ></ngx-duallistbox>
+            <ngx-duallistbox
+                [title]="'Custom display'"
+                [inData]="inData1" 
+                [outData]="outData2" 
+                [inputId]="'id'" 
+                [outputId]="'id'" 
+                [display]="['name', 'age', 'gender']"
+                [displaySeparator]="' * '"
+            ></ngx-duallistbox>
+        </figure>
+        <div>
+            <a href="https://github.com/Suarsan/ngx-duallistbox" target="_blank">
+                <img src="assets/icons/github.svg" alt="github">
+                {{ 'view on github' | translate }}
+            </a>
+            <a href="https://www.npmjs.com/package/@suarsan/ngx-duallistbox" target="_blank">
+                <img src="assets/icons/npm.svg" alt="npm">
+                {{ 'view on NPM' | translate }}
+            </a>
+        </div>
+    </div>
+</main>

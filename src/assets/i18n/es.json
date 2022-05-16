@@ -14,7 +14,7 @@
     "portfolio": {
         "my portfolio": "<span>Mi</span> portfolio",
         "duallistbox": {
-            "title": "Dual list box",
+            "title": "@suarsan/ngx-duallistbox",
             "description": "Componente para multiselección tipo 'duallistbox' compatible con Angular 2+. Responsive y configurable."
         },
         "backoffice_template": {
@@ -62,5 +62,7 @@
         "send": "Enviar",
         "sending": "Enviando",
         "sended": "Enviado"
-    }
+    },
+    "view on github": "Ver en Github",
+    "view on NPM": "Ver en NPM"
 }
