@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-declare const window;
 
 @Component({
   selector: 'app-about',
@@ -9,7 +7,7 @@ declare const window;
 })
 export class AboutComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit() { }
 

@@ -7,7 +7,7 @@
     <input type="text" placeholder="{{subjectPlaceholder | translate}}" formControlName="subject" [readonly]="status !== 'send'">
     <textarea type="text" rows="8" placeholder="{{messagePlaceholder | translate}}" formControlName="message" [readonly]="status !== 'send'"></textarea>
     <div>
-      <!-- <p *ngIf="status === 'sended'" (click)="retry()">reset</p> -->
+      <p *ngIf="status === 'sended'" (click)="retry()">reset</p>
       <button (click)="mail()" [class.disabled]="!contactForm.valid" [ngClass]="status" [innerHTML]="getStatusText() | translate">{{status}}</button>
     </div>
   </form>

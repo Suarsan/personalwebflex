@@ -33,7 +33,7 @@ import { NgxDuallistboxModule } from '@suarsan/ngx-duallistbox';
     SkillBarComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
@@ -46,7 +46,6 @@ import { NgxDuallistboxModule } from '@suarsan/ngx-duallistbox';
       }
     })
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
