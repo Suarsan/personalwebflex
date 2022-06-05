@@ -1,0 +1,24 @@
+<header>
+    <a [routerLink]="['/']">
+        <img src="assets/icons/back.svg">
+    </a>
+    <h1>{{ 'portfolio.keyvalue.title' | translate }}</h1>
+</header>
+<main>
+    <div>
+        <p>{{ 'portfolio.keyvalue.description' | translate }}</p>
+        <figure>
+            <ngx-keyvalue [input]="input"></ngx-keyvalue>
+        </figure>
+        <div>
+            <a href="https://github.com/Suarsan/ngx-keyvalue" target="_blank">
+                <img src="assets/icons/github.svg" alt="github">
+                {{ 'view on github' | translate }}
+            </a>
+            <a href="https://www.npmjs.com/package/@suarsan/ngx-keyvalue" target="_blank">
+                <img src="assets/icons/npm.svg" alt="npm">
+                {{ 'view on NPM' | translate }}
+            </a>
+        </div>
+    </div>
+</main>

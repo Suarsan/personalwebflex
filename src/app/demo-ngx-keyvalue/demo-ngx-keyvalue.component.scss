@@ -35,8 +35,8 @@
                 margin: 0;
                 padding: 0;
                 background-color: rgba($text-light-color, 1);
-                > ngx-duallistbox {
-                    margin: 25px;
+                > ngx-keyvalue {
+                    margin: 25px 0;
                 }
             }
             > div {
@@ -110,10 +110,6 @@
         > main {
             width: 900px;
             margin: 0 auto;
-            > div {
-                > figure {
-                }
-            }
         }
     }
 }

@@ -28,9 +28,10 @@
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
     "@suarsan/ngx-duallistbox": "^0.0.2",
+    "@suarsan/ngx-keyvalue": "^0.0.13",
     "core-js": "^2.5.4",
     "express": "^4.15.2",
-    "rxjs": "~6.5.4",
+    "rxjs": "~7.5.0",
     "zone.js": "~0.11.5"
   },
   "devDependencies": {
