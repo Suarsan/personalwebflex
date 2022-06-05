@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, TransferState } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -17,6 +17,8 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { SkillBarComponent } from './components/skill-bar/skill-bar.component';
 import { DemoNgxDuallistboxComponent } from './demo-ngx-duallistbox/demo-ngx-duallistbox.component';
 import { NgxDuallistboxModule } from '@suarsan/ngx-duallistbox';
+import { translateBrowserLoaderFactory } from './loaders/translate-browser.loader';
+import { TransferHttpCacheModule } from '@nguniversal/common';
 
 @NgModule({
   declarations: [
@@ -33,24 +35,20 @@ import { NgxDuallistboxModule } from '@suarsan/ngx-duallistbox';
     SkillBarComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
     NgxDuallistboxModule,
+    TransferHttpCacheModule,
     TranslateModule.forRoot({
       loader: {
           provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-          deps: [HttpClient]
+          useFactory: translateBrowserLoaderFactory,
+          deps: [HttpClient, TransferState]
       }
     })
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
-}
