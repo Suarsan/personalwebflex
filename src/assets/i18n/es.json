@@ -17,6 +17,10 @@
             "title": "@suarsan/ngx-duallistbox",
             "description": "Componente para multiselección tipo 'duallistbox' compatible con Angular 2+. Responsive y configurable."
         },
+        "keyvalue": {
+            "title": "@suarsan/ngx-keyvalue",
+            "description": "Componente para generar pares clave/valor compatible con Angular 2+. Responsive y configurable."
+        },
         "backoffice_template": {
             "title": "Backoffice template",
             "description": "Seed basado en Angular 7. Incluye servicios como inyeccion de notificaciones push, almacenamiento local encriptado..."

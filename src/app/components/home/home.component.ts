@@ -1,4 +1,5 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, OnInit, HostListener, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +8,13 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  window;
   screenHeight: number;
   topSpace: number;
 
-  constructor() { }
+  constructor(@Inject(DOCUMENT) private document) {
+    this.window = this.document.defaultView;
+ }
 
   ngOnInit() {
     this.layout();
@@ -18,13 +22,13 @@ export class HomeComponent implements OnInit {
 
   @HostListener('window:resize', ['event'])
   onResize() {
-    if (window.innerWidth > 768) {
+    if (this.window.innerWidth > 768) {
       this.layout();
     }
   }
   
   private layout() {
-    this.screenHeight = window.innerHeight;
+    this.screenHeight = this.window.innerHeight;
     if (this.screenHeight < 768) {
       this.topSpace = this.screenHeight * 0.2;
     } else {
