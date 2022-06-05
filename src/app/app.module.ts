@@ -2,7 +2,6 @@ import { BrowserModule, TransferState } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,16 +14,20 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { SkillBarComponent } from './components/skill-bar/skill-bar.component';
-import { DemoNgxDuallistboxComponent } from './demo-ngx-duallistbox/demo-ngx-duallistbox.component';
-import { NgxDuallistboxModule } from '@suarsan/ngx-duallistbox';
 import { translateBrowserLoaderFactory } from './loaders/translate-browser.loader';
 import { TransferHttpCacheModule } from '@nguniversal/common';
+import { DemoNgxDuallistboxComponent } from './demo-ngx-duallistbox/demo-ngx-duallistbox.component';
+import { NgxDuallistboxModule } from '@suarsan/ngx-duallistbox';
+import { DemoNgxKeyvalueComponent } from './demo-ngx-keyvalue/demo-ngx-keyvalue.component';
+import { NgxKeyvalueModule } from '@suarsan/ngx-keyvalue';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     DemoNgxDuallistboxComponent,
+    DemoNgxKeyvalueComponent,
     HomeComponent,
     NavbarComponent,
     AboutComponent,
@@ -40,6 +43,7 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
     HttpClientModule,
     ReactiveFormsModule,
     NgxDuallistboxModule,
+    NgxKeyvalueModule,
     TransferHttpCacheModule,
     TranslateModule.forRoot({
       loader: {

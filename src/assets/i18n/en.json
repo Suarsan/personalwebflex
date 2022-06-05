@@ -17,6 +17,10 @@
             "title": "@suarsan/ngx-duallistbox",
             "description": "A full featured and customizable dual list box selector for Angular."
         },
+        "keyvalue": {
+            "title": "@suarsan/ngx-duallistbox",
+            "description": "A full featured and customizable key/value pairs generator for Angular."
+        },
         "backoffice_template": {
             "title": "Backoffice template",
             "description": "Seed basado en Angular 7. Incluye servicios como inyeccion de notificaciones push, almacenamiento local encriptado..."
