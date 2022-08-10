@@ -27,9 +27,9 @@
     "@nguniversal/express-engine": "^13.1.1",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
-    "@suarsan/ngx-duallistbox": "^0.0.2",
-    "@suarsan/ngx-keyvalue": "^0.0.13",
-    "core-js": "^2.5.4",
+    "@suarsan/ngx-duallistbox": "^0.0.4",
+    "@suarsan/ngx-keyvalue": "^0.0.15",
+    "@suarsan/ngx-flipboardtext": "^0.0.3",
     "express": "^4.15.2",
     "rxjs": "~7.5.0",
     "zone.js": "~0.11.5"
@@ -55,7 +55,6 @@
     "protractor": "~7.0.0",
     "ts-node": "~7.0.0",
     "tslib": "^2.4.0",
-    "tslint": "~6.1.3",
     "typescript": "~4.6.4"
   }
 }

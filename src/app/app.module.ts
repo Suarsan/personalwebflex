@@ -16,10 +16,12 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { SkillBarComponent } from './components/skill-bar/skill-bar.component';
 import { translateBrowserLoaderFactory } from './loaders/translate-browser.loader';
 import { TransferHttpCacheModule } from '@nguniversal/common';
-import { DemoNgxDuallistboxComponent } from './demo-ngx-duallistbox/demo-ngx-duallistbox.component';
 import { NgxDuallistboxModule } from '@suarsan/ngx-duallistbox';
-import { DemoNgxKeyvalueComponent } from './demo-ngx-keyvalue/demo-ngx-keyvalue.component';
+import { DemoNgxDuallistboxComponent } from './demo-ngx-duallistbox/demo-ngx-duallistbox.component';
 import { NgxKeyvalueModule } from '@suarsan/ngx-keyvalue';
+import { DemoNgxKeyvalueComponent } from './demo-ngx-keyvalue/demo-ngx-keyvalue.component';
+import { NgxFlipboardtextModule } from '@suarsan/ngx-flipboardtext';
+import { DemoNgxFlipboardtextComponent } from './demo-ngx-flipboardtext/demo-ngx-flipboardtext.component';
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import { NgxKeyvalueModule } from '@suarsan/ngx-keyvalue';
     LandingComponent,
     DemoNgxDuallistboxComponent,
     DemoNgxKeyvalueComponent,
+    DemoNgxFlipboardtextComponent,
     HomeComponent,
     NavbarComponent,
     AboutComponent,
@@ -44,6 +47,7 @@ import { NgxKeyvalueModule } from '@suarsan/ngx-keyvalue';
     ReactiveFormsModule,
     NgxDuallistboxModule,
     NgxKeyvalueModule,
+    NgxFlipboardtextModule,
     TransferHttpCacheModule,
     TranslateModule.forRoot({
       loader: {

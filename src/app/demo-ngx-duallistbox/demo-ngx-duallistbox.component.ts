@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-demo-ngx-duallistbox',
   templateUrl: './demo-ngx-duallistbox.component.html',
   styleUrls: ['./demo-ngx-duallistbox.component.scss']
 })
-export class DemoNgxDuallistboxComponent implements OnInit {
+export class DemoNgxDuallistboxComponent {
 
   inData1 = [
     {
@@ -61,8 +61,5 @@ export class DemoNgxDuallistboxComponent implements OnInit {
     }
   ];
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
