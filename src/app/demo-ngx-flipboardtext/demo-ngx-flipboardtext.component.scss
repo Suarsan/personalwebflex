@@ -31,11 +31,12 @@
             }
             > figure {
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
+                flex-wrap: wrap;
                 margin: 0;
                 padding: 0;
                 background-color: rgba($text-light-color, 1);
-                > ngx-duallistbox {
+                > ngx-flipboardtext {
                     margin: 25px;
                 }
             }

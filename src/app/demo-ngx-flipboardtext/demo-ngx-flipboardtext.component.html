@@ -1,0 +1,58 @@
+<header>
+    <a [routerLink]="['/']">
+        <img src="assets/icons/back.svg">
+    </a>
+    <h1>{{ 'portfolio.flipboardtext.title' | translate }}</h1>
+</header>
+<main>
+    <div>
+        <p>{{ 'portfolio.flipboardtext.description' | translate }}</p>
+        <figure>
+            <ngx-flipboardtext
+                [keys]="data"
+                [cycleDuration]="5000"
+                [fontSize]="'5rem'"
+                [breakRatio]="0.85"
+                [backgroundColor]="'#2cc4d2'" 
+                [textColor]="'#FFFFFF'"></ngx-flipboardtext>
+            <ngx-flipboardtext
+                    [keys]="data"
+                    [cycleDuration]="1000"
+                    [fontSize]="'4rem'"
+                    [breakRatio]="0.75"
+                    [backgroundColor]="'transparent'" 
+                    [textColor]="'#FFFFFF'"></ngx-flipboardtext>
+            <ngx-flipboardtext
+                [keys]="data"
+                [cycleDuration]="15000"
+                [fontSize]="'3rem'"
+                [breakRatio]="0.5"
+                [backgroundColor]="'#FFFFFF'" 
+                [textColor]="'#2cc4d2'"></ngx-flipboardtext>
+            <ngx-flipboardtext
+                [keys]="data"
+                [cycleDuration]="2500"
+                [fontSize]="'3rem'"
+                [breakRatio]="0.25"
+                [backgroundColor]="'transparent'" 
+                [textColor]="'#2cc4d2'"></ngx-flipboardtext>
+            <ngx-flipboardtext
+                [keys]="data"
+                [cycleDuration]="4000"
+                [fontSize]="'3rem'"
+                [breakRatio]="0.35"
+                [backgroundColor]="'#2cc4d2'" 
+                [textColor]="'#f0f0f0'"></ngx-flipboardtext>
+        </figure>
+        <div>
+            <a href="https://github.com/Suarsan/ngx-flipboardtext" target="_blank">
+                <img src="assets/icons/github.svg" alt="github">
+                {{ 'view on github' | translate }}
+            </a>
+            <a href="https://www.npmjs.com/package/@suarsan/ngx-flipboardtext" target="_blank">
+                <img src="assets/icons/npm.svg" alt="npm">
+                {{ 'view on NPM' | translate }}
+            </a>
+        </div>
+    </div>
+</main>
