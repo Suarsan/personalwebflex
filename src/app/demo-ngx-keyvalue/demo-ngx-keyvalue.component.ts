@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Item } from '@suarsan/ngx-keyvalue/lib/item.interface';
 
 @Component({
@@ -6,7 +6,7 @@ import { Item } from '@suarsan/ngx-keyvalue/lib/item.interface';
   templateUrl: './demo-ngx-keyvalue.component.html',
   styleUrls: ['./demo-ngx-keyvalue.component.scss']
 })
-export class DemoNgxKeyvalueComponent implements OnInit {
+export class DemoNgxKeyvalueComponent {
 
   input: Array<Item> = [
     { key: 'key_1', value: 'value_1' },
@@ -17,8 +17,5 @@ export class DemoNgxKeyvalueComponent implements OnInit {
   ];
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

@@ -18,8 +18,12 @@
             "description": "A full featured and customizable dual list box selector for Angular."
         },
         "keyvalue": {
-            "title": "@suarsan/ngx-duallistbox",
+            "title": "@suarsan/ngx-keyvalue",
             "description": "A full featured and customizable key/value pairs generator for Angular."
+        },
+        "flipboardtext": {
+            "title": "@suarsan/ngx-flipboardtext",
+            "description": "A full featured and customizable flipboard text component for Angular."
         },
         "backoffice_template": {
             "title": "Backoffice template",
