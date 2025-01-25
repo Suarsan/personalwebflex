@@ -42,9 +42,9 @@ jobs:
           docker run -d \
             --name javiersuarezsanchez.com \
             -p 6000:6000 \
-            -v $(pwd)/javiersuarezsanchez.com:/app/javiersuarezsanchez.com \
+            -v $(pwd)/personalwebflex:/app/personalwebflex \
             -w /app \
             --restart always \
-            --env-file .env_prod \
+            --env-file .env \
             ghcr.io/suarsan/personalwebflex:latest
           EOF
