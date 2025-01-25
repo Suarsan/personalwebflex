@@ -1,4 +1,4 @@
-name: Deploy personalwebflex
+name: Deploy javiersuarezsanchez.com
 
 on:
   push:
@@ -35,16 +35,16 @@ jobs:
       - name: SSH into Server
         run: |
           sshpass -p ${{ secrets.VPS_PASS }} ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }} << EOF
-          cd /root/personalwebflex/
+          cd /var/docker/javiersuarezsanchez.com/
           docker login ghcr.io -u suarsan -p ${{secrets.TOKEN_CD}}
           docker pull ghcr.io/suarsan/personalwebflex:latest
           docker stop personalwebflex && docker rm personalwebflex
           docker run -d \
-            --name personalwebflex \
+            --name javiersuarezsanchez.com \
             -p 6000:6000 \
-            -v $(pwd)/personalwebflex:/app/personalwebflex \
+            -v $(pwd)/javiersuarezsanchez.com:/app/javiersuarezsanchez.com \
             -w /app \
             --restart always \
-            --env-file .env \
+            --env-file .env_prod \
             ghcr.io/suarsan/personalwebflex:latest
           EOF
