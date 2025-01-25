@@ -13,17 +13,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-    - name: Login to Github Container Registry
-      uses: docker/lgin-action@v1
-      with:
-        registry: ghcr.io
-        username: ${{ github.actor }}
-        password: ${{ secrets.TOKEN_CD }}
+      - name: Login to Github Container Registry
+        uses: docker/lgin-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.TOKEN_CD }}
 
-    - name: Build image
-      run: |
-        docker build . --tag ghcr.io/suarsan/personalwebflex:latest
-        docker push ghcr.io/suarsan/personalwebflex:latest
+      - name: Build image
+        run: |
+          docker build . --tag ghcr.io/suarsan/personalwebflex:latest
+          docker push ghcr.io/suarsan/personalwebflex:latest
   
   deploy:
     needs: create-docker-image
