@@ -1,0 +1,50 @@
+name: Deploy personalwebflex
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+jobs:
+  create-docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+    - name: Login to Github Container Registry
+      uses: docker/lgin-action@v1
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.TOKEN_CD }}
+
+    - name: Build image
+      run: |
+        docker build . --tag ghcr.io/suarsan/personalwebflex:latest
+        docker push ghcr.io/suarsan/personalwebflex:latest
+  
+  deploy:
+    needs: create-docker-image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install sshpass
+        run: sudo apt-get install -y sshpass
+
+      - name: SSH into Server
+        run: |
+          sshpass -p ${{ secrets.VPS_PASS }} ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }} << EOF
+          cd /root/personalwebflex/
+          docker login ghcr.io -u suarsan -p ${{secrets.TOKEN_CD}}
+          docker pull ghcr.io/suarsan/personalwebflex:latest
+          docker stop personalwebflex && docker rm personalwebflex
+          docker run -d \
+            --name personalwebflex \
+            -p 6000:6000 \
+            -v $(pwd)/personalwebflex:/app/personalwebflex \
+            -w /app \
+            --restart always \
+            --env-file .env \
+            ghcr.io/suarsan/personalwebflex:latest
+          EOF
