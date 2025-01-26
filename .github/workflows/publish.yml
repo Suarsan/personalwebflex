@@ -22,8 +22,8 @@ jobs:
 
       - name: Build image
         run: |
-          docker build . --tag ghcr.io/suarsan/personalwebflex:latest
-          docker push ghcr.io/suarsan/personalwebflex:latest
+          docker build . --tag ghcr.io/suarsan/javiersuarezsanchez.com:latest
+          docker push ghcr.io/suarsan/javiersuarezsanchez.com:latest
   
   deploy:
     needs: create-docker-image
@@ -37,14 +37,14 @@ jobs:
           sshpass -p ${{ secrets.VPS_PASS }} ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }} << EOF
           cd /var/docker/javiersuarezsanchez.com/
           docker login ghcr.io -u suarsan -p ${{secrets.TOKEN_CD}}
-          docker pull ghcr.io/suarsan/personalwebflex:latest
-          docker stop personalwebflex && docker rm personalwebflex
+          docker pull ghcr.io/suarsan/javiersuarezsanchez.com:latest
+          docker stop javiersuarezsanchez.com && docker rm javiersuarezsanchez.com
           docker run -d \
             --name javiersuarezsanchez.com \
             -p 6000:6000 \
-            -v $(pwd)/personalwebflex:/app/personalwebflex \
+            -v $(pwd)/javiersuarezsanchez.com:/app/javiersuarezsanchez.com \
             -w /app \
             --restart always \
             --env-file .env \
-            ghcr.io/suarsan/personalwebflex:latest
+            ghcr.io/suarsan/javiersuarezsanchez.com:latest
           EOF
