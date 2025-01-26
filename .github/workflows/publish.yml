@@ -42,7 +42,7 @@ jobs:
           docker run -d \
             --name javiersuarezsanchez.com \
             -p 6000:6000 \
-            -v $(pwd)/javiersuarezsanchez.com:/app/javiersuarezsanchez.com \
+            -v $(pwd)/javiersuarezsanchez.com:/javiersuarezsanchez.com \
             -w /app \
             --restart always \
             --env-file .env \

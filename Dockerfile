@@ -1,6 +1,6 @@
 # Etapa 1: Construcción
 FROM node:18-alpine AS build
-WORKDIR /app
+WORKDIR /
 
 # Instalar dependencias y construir el proyecto
 COPY package*.json ./
@@ -10,10 +10,10 @@ RUN npm run build:ssr
 
 # Etapa 2: Servidor
 FROM node:18-alpine
-WORKDIR /app
+WORKDIR /
 
 # Copiar archivos del build al contenedor
-COPY --from=build /app/dist ./dist
+COPY --from=build /dist ./dist
 COPY package*.json ./
 
 # Instalar dependencias para producción
