@@ -13,7 +13,7 @@ FROM node:18-alpine
 WORKDIR /app
 
 # Copiar archivos del build al contenedor
-COPY --from=build /app/dist ./dist
+COPY --from=build /app/dist ./
 COPY package*.json ./
 
 # Instalar dependencias para producción
@@ -23,4 +23,4 @@ RUN npm install --production
 EXPOSE 6000
 
 # Comando para iniciar la aplicación SSR
-CMD ["node", "dist/server/main.js"]
+CMD ["node", "server/main.js"]
